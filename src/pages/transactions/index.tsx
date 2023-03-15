@@ -1,5 +1,6 @@
 import { Header } from '../../components/Header'
 import { Summay } from '../../components/Summary'
+import { SearchForm } from './components/SearchForm'
 import {
   PriceHighLight,
   TransactionsContainer,
@@ -12,6 +13,7 @@ export function Transaction() {
       <Header />
       <Summay />
       <TransactionsContainer>
+        <SearchForm />
         <TransactionTable>
           <tr>
             <td width="50%">Desenvolvimento de site</td>

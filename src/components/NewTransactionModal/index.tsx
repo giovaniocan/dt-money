@@ -29,7 +29,7 @@ export function NewTransactionModal() {
               Entrada
             </TransactionTypeButton>
             <TransactionTypeButton variante="outcome">
-              <ArrowCircleDown size={24} />
+              <ArrowCircleDown size={23} />
               Saida
             </TransactionTypeButton>
           </TransactionType>

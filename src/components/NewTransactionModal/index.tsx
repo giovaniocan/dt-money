@@ -9,19 +9,20 @@ import {
 } from './styles'
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 
 const newTransactionFormSchema = z.object({
   description: z.string(),
   price: z.number(),
   category: z.string(),
-  /* type: z.enum(['income', 'outcome']), */
+  type: z.enum(['income', 'outcome']),
 })
 
 type newTransactionFormInpusts = z.infer<typeof newTransactionFormSchema>
 
 export function NewTransactionModal() {
   const {
+    control /* quando nos temos campos que não são nativos do html, igual esse é nativo do Dialog (o radio) nos temos que usar ele */,
     register,
     handleSubmit,
     formState: { isSubmitting },
@@ -62,16 +63,27 @@ export function NewTransactionModal() {
             {...register('category')}
           />
 
-          <TransactionType>
-            <TransactionTypeButton variante="income" value="income">
-              <ArrowCircleUp size={24} />
-              Entrada
-            </TransactionTypeButton>
-            <TransactionTypeButton variante="outcome" value="outcome">
-              <ArrowCircleDown size={23} />
-              Saida
-            </TransactionTypeButton>
-          </TransactionType>
+          <Controller
+            control={control}
+            name="type"
+            render={({ field }) => {
+              return (
+                <TransactionType
+                  onValueChange={field.onChange}
+                  value={field.value}
+                >
+                  <TransactionTypeButton variante="income" value="income">
+                    <ArrowCircleUp size={24} />
+                    Entrada
+                  </TransactionTypeButton>
+                  <TransactionTypeButton variante="outcome" value="outcome">
+                    <ArrowCircleDown size={23} />
+                    Saida
+                  </TransactionTypeButton>
+                </TransactionType>
+              )
+            }}
+          />
 
           <button type="submit" disabled={isSubmitting}>
             Cadastrar

@@ -15,6 +15,13 @@
             "category": "Alimentação",
             "price" :   30,
             "createaAt" : "2023-03-16T18:29:45.002Z" 
+        },  {
+            "id": 3, 
+            "description" : "Iginite rocketseat",
+            "type" : "outcome",
+            "category": "educação",
+            "price" :   1990,
+            "createaAt" : "2023-03-16T18:58:45.002Z" 
         }
     ]
 }

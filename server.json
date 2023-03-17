@@ -1,27 +1,52 @@
 {
-    "transactions": [
-        {
-            "id": 1, 
-            "description" : "desenvolvimento de site",
-            "type" : "income",
-            "category": "Venda",
-            "price" :   14000,
-            "createaAt" : "2023-03-16T18:31:45.002Z" 
-        },
-        {
-            "id": 2, 
-            "description" : "hamburger",
-            "type" : "outcome",
-            "category": "Alimentação",
-            "price" :   30,
-            "createaAt" : "2023-03-16T18:29:45.002Z" 
-        },  {
-            "id": 3, 
-            "description" : "Iginite rocketseat",
-            "type" : "outcome",
-            "category": "educação",
-            "price" :   1990,
-            "createaAt" : "2023-03-16T18:58:45.002Z" 
-        }
-    ]
+  "transactions": [
+    {
+      "id": 1,
+      "description": "desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 14000,
+      "createaAt": "2023-03-16T18:31:45.002Z"
+    },
+    {
+      "id": 2,
+      "description": "hamburger",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 30,
+      "createaAt": "2023-03-16T18:29:45.002Z"
+    },
+    {
+      "id": 3,
+      "description": "Iginite rocketseat",
+      "type": "outcome",
+      "category": "educação",
+      "price": 1990,
+      "createaAt": "2023-03-16T18:58:45.002Z"
+    },
+    {
+      "description": "freelancer",
+      "price": 3500,
+      "category": "Venda",
+      "type": "income",
+      "createaAt": "2023-03-17T18:44:40.601Z",
+      "id": 4
+    },
+    {
+      "description": "sorvete ",
+      "price": 20,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createaAt": "2023-03-17T19:02:56.791Z",
+      "id": 5
+    },
+    {
+      "description": "lanche",
+      "price": 50,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createaAt": "2023-03-17T19:03:30.923Z",
+      "id": 6
+    }
+  ]
 }

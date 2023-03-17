@@ -10,6 +10,8 @@ import {
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
+import { useContext } from 'react'
+import { TransactionsContext } from '../../contexts/TransactionsContext'
 
 const newTransactionFormSchema = z.object({
   description: z.string(),
@@ -21,17 +23,21 @@ const newTransactionFormSchema = z.object({
 type newTransactionFormInpusts = z.infer<typeof newTransactionFormSchema>
 
 export function NewTransactionModal() {
+  const { createTransaction } = useContext(TransactionsContext)
+
   const {
     control /* quando nos temos campos que não são nativos do html, igual esse é nativo do Dialog (o radio) nos temos que usar ele */,
     register,
     handleSubmit,
+    reset,
     formState: { isSubmitting },
   } = useForm<newTransactionFormInpusts>({
     resolver: zodResolver(newTransactionFormSchema),
   })
 
-  function handleCreatNewTransaction(data: newTransactionFormInpusts) {
-    console.log(data)
+  async function handleCreatNewTransaction(data: newTransactionFormInpusts) {
+    await createTransaction(data)
+    reset()
   }
 
   return (
